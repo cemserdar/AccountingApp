@@ -1176,6 +1176,15 @@
           }
         }
       },
+      "NSoup/0.8.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/NSoup.dll": {}
+        },
+        "runtime": {
+          "lib/net40/NSoup.dll": {}
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
         "type": "package",
         "dependencies": {
@@ -3541,6 +3550,18 @@
         "packageIcon.png"
       ]
     },
+    "NSoup/0.8.0": {
+      "sha512": "prlsDPRtYQBrkTwDtf0EOKK1L8+OFfRqkH6UN3wW0fAErLRQCCHQZ/Y80bQrcCing+rLH/AUWXXrLGR/KR6F0Q==",
+      "type": "package",
+      "path": "nsoup/0.8.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/NSoup.dll",
+        "nsoup.0.8.0.nupkg.sha512",
+        "nsoup.nuspec"
+      ]
+    },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.6": {
       "sha512": "BmAf6XWt4TqtowmiWe4/5rRot6GerAeklmOPfviOvwLoF5WwgxcJHAxZtySuyW9r9w+HLILnm8VfJFLCUJYW8A==",
       "type": "package",
@@ -4810,28 +4831,29 @@
       "Microsoft.EntityFrameworkCore.Design >= 8.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.4",
+      "NSoup >= 0.8.0",
       "Newtonsoft.Json >= 13.0.3",
       "bootstrap >= 5.3.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Cem Serdar\\.nuget\\packages\\": {},
+    "C:\\Users\\cemse\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cem Serdar\\Source\\Repos\\AccountingApp\\accountingWebSite.csproj",
+      "projectUniqueName": "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\accountingWebSite.csproj",
       "projectName": "accountingWebSite",
-      "projectPath": "C:\\Users\\Cem Serdar\\Source\\Repos\\AccountingApp\\accountingWebSite.csproj",
-      "packagesPath": "C:\\Users\\Cem Serdar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cem Serdar\\Source\\Repos\\AccountingApp\\obj\\",
+      "projectPath": "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\accountingWebSite.csproj",
+      "packagesPath": "C:\\Users\\cemse\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Cem Serdar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cemse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4882,6 +4904,10 @@
             "target": "Package",
             "version": "[8.0.4, )"
           },
+          "NSoup": {
+            "target": "Package",
+            "version": "[0.8.0, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
@@ -4910,8 +4936,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NSoup 0.8.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NSoup",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

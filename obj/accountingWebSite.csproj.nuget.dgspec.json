@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cem Serdar\\source\\repos\\AccountingApp\\accountingWebSite.csproj": {}
+    "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\accountingWebSite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cem Serdar\\source\\repos\\AccountingApp\\accountingWebSite.csproj": {
+    "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\accountingWebSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cem Serdar\\source\\repos\\AccountingApp\\accountingWebSite.csproj",
+        "projectUniqueName": "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\accountingWebSite.csproj",
         "projectName": "accountingWebSite",
-        "projectPath": "C:\\Users\\Cem Serdar\\source\\repos\\AccountingApp\\accountingWebSite.csproj",
-        "packagesPath": "C:\\Users\\Cem Serdar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cem Serdar\\source\\repos\\AccountingApp\\obj\\",
+        "projectPath": "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\accountingWebSite.csproj",
+        "packagesPath": "C:\\Users\\cemse\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cemse\\Source\\Repos\\cemserdar\\AccountingApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cem Serdar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cemse\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[8.0.4, )"
             },
+            "NSoup": {
+              "target": "Package",
+              "version": "[0.8.0, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -96,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

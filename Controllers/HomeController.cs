@@ -10,6 +10,12 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
+using System.Xml.Linq;
+using NSoup;
+using NSoup.Nodes;
+using NSoup.Select;
+using Document = NSoup.Nodes.Document;
 
 namespace accountingWebSite.Controllers;
 
@@ -21,85 +27,43 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-  
+
 
     public async Task<IActionResult> Index()
     {
         InformationModel model = new InformationModel();
-        using (var client = new HttpClient())
+        //----------------SGK----------------------------------
+        SgkDuyuruModel sgkDuyuruModel = new SgkDuyuruModel();
+
+        Document doc = NSoupClient.Connect("https://www.sgk.gov.tr/Duyuru").Get();
+        Element div_news = doc.GetElementById("posts");
+        Elements news = div_news.GetElementsByClass("entry");
+        foreach (Element item in news)
         {
-            // API endpoint'i
-            string apiUrl = "https://www.sgk.gov.tr/Duyuru";
-            
-            try
-            {
-                // API'den veriyi al
-                HttpResponseMessage response = await client.GetAsync(apiUrl);
-
-                // Ýsteðin baþarýlý olup olmadýðýný kontrol et
-                if (response.IsSuccessStatusCode)
-                {
-                    // Yanýtý JSON olarak oku
-                    string responseBody = await response.Content.ReadAsStringAsync();
-
-                    //-------------------------------------
-
-                    var doc = new HtmlDocument();
-                    doc.LoadHtml(responseBody);
-
-                    // Örnek olarak, HTML içerisinde belirli bir elementi seçelim
-                    var duyurularNodes = doc.DocumentNode.SelectNodes("//div[@class='entry-title']");
-
-
-                    var duyurular = new List<object>();
-
-                    if (duyurularNodes != null)
-                    {
-                        foreach (var node in duyurularNodes)
-                        {
-                            // HTML içeriðinden gerekli verileri alarak JSON objelerine dönüþtürün
-                            var baslik = node.SelectSingleNode(".//h4").InnerText.Trim();
-
-
-                            duyurular.Add(new { Baslik = baslik });
-
-                        }
-                    }
-                    
-                    string jsonDuyurular = JsonConvert.SerializeObject(duyurular);
-                    JArray jArray = JArray.Parse(jsonDuyurular);
-
-
-                    List<JToken> jTokenList = jArray.ToList();
-                    SgkDuyuruModel sgk = new SgkDuyuruModel();
-
-
-                    for (int i = 0; i < jTokenList.Count; i++)
-                    {
-                        sgk.Id = i+1;
-                        sgk.Baslik.Add(jTokenList[i].Last.ToString());
-
-                        model.Title = sgk.Baslik;
-                    }
-
-                }
-
-                else
-                {
-                    Console.WriteLine("API isteði baþarýsýz: " + response.StatusCode);
-                }
-            }
-            catch (HttpRequestException e)
-            {
-                Console.WriteLine("Hata oluþtu: " + e.Message);
-            }
-
+            sgkDuyuruModel.SgkTitle.Add(item.Select("a").Text);
+            sgkDuyuruModel.SgkLink.Add(item.Select("a").Attr("href").Remove(0, 8));
+            sgkDuyuruModel.SgkDate.Add(item.GetElementsByClass("sgkUnite").Text);
         }
+        model.SgkDuyuruModel = sgkDuyuruModel;
 
+        //---------------------------SGK---------------------------------
+
+        //-------------------------GÝB------------------------------------
+        GibDuyuruModel gibDuyuruModel = new GibDuyuruModel();
+        Document gib = NSoupClient.Connect("https://www.gib.gov.tr/haberlerveduyurular").Get();
+        Element gib_news = gib.GetElementById("block-system-main");
+        Elements gibNews = gib_news.GetElementsByClass("blogpost");
+        foreach (Element item in gibNews)
+        {
+            gibDuyuruModel.GibTitle.Add(item.Select("a").Text);
+            gibDuyuruModel.GibLink.Add(item.Select("a").Attr("href"));
+            gibDuyuruModel.GibDate.Add(item.GetElementsByClass("date").Text);
+        }
+        model.gibDuyuruModel = gibDuyuruModel;
+        //-------------------------GÝB------------------------------------
         return View(model);
 
     }
-
 
 
     public IActionResult Privacy()
