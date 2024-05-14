@@ -40,9 +40,13 @@ public class HomeController : Controller
         Elements news = div_news.GetElementsByClass("entry");
         foreach (Element item in news)
         {
-            sgkDuyuruModel.SgkTitle.Add(item.Select("a").Text);
+            //sgkDuyuruModel.SgkTitle.Add(item.Select("a").Text);
+            //sgkDuyuruModel.SgkTitle.Add(item.Select("a").TagName("a").Text);
+            sgkDuyuruModel.SgkTitle.Add(item.GetElementsByTag("a").Text);
+
             sgkDuyuruModel.SgkLink.Add(item.Select("a").Attr("href").Remove(0, 8));
             sgkDuyuruModel.SgkDate.Add(item.GetElementsByClass("sgkUnite").Text);
+            
         }
         model.SgkDuyuruModel = sgkDuyuruModel;
 
@@ -61,8 +65,11 @@ public class HomeController : Controller
         }
         model.gibDuyuruModel = gibDuyuruModel;
         //-------------------------GÝB------------------------------------
-        return View(model);
 
+        ViewBag.count = sgkDuyuruModel.SgkLink.Count;
+
+
+        return View(model);
     }
 
 

@@ -363,6 +363,7 @@ C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\Microsoft.S
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\NSoup.dll
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\SQLitePCLRaw.core.dll
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
@@ -489,4 +490,3 @@ C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\obj\Debug\net8.0\refint\acco
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\obj\Debug\net8.0\accountingWebSite.pdb
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\obj\Debug\net8.0\accountingWebSite.genruntimeconfig.cache
 C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\obj\Debug\net8.0\ref\accountingWebSite.dll
-C:\Users\cemse\Source\Repos\cemserdar\AccountingApp\bin\Debug\net8.0\NSoup.dll
